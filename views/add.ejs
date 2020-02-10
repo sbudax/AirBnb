@@ -1,0 +1,67 @@
+ <% include nav.ejs %>
+<main> 
+    <div class="container">
+    <div class="row">
+        <form action="/landlord" method="POST" class="col s12" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" name = "location">
+                <label for="location">Location</label>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="input-field">
+                    <input type="text" name = "price">
+                    <label for="price">Price</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field">
+                    <h5>Describe your place</h5>
+                    <textarea name="body"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <h5>Upload Pictures</h5> 
+            <!-- <div class="file-field input-field">
+                    <div class="waves-effect waves-light btn">
+                        <span>Add picture</span> -->
+                        <!-- <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload one or more Pictures"> -->
+
+                        <%= typeof msg != 'undefined' ? msg : '' %>
+                        <!-- <form action="/upload" method="POST" enctype="multipart/form-data"> -->
+                          <div class="file-field input-field">
+                            <div class="btn blue">
+                              <span>File</span>
+                              <input name="myImage" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text">
+                            </div>
+                          </div>
+
+                    </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <select name="status">
+                        <option value="public" selected>Public</option>
+                    </select>
+                </div>
+            </div> 
+            <input type="submit" value="Save" class="btn btn-green">
+        </form>
+
+    </div>
+    </div>
+</main>
+
+ <% include footer.ejs %>
+
+
